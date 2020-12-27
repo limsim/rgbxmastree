@@ -1,0 +1,1 @@
+setsid python3 gradient_by_row_with_reverse.py < /dev/zero &> /dev/null &
