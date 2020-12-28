@@ -7,7 +7,9 @@ tree.brightness = 0.5
 
 try:
     while True:
-        tree.color = Color('#fec89a')
+        tree.color = Color((0,255,0))
+        # tree.color = Color('#fec89a')
+        # tree.color = Color('red')
         # sleep(0.1)
 except KeyboardInterrupt:
     tree.off()

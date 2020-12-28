@@ -1,3 +1,15 @@
+- [Raspberry Pi RGB Xmas Tree Additional Lighting Sequence](#raspberry-pi-rgb-xmas-tree-additional-lighting-sequence)
+  - [Pre-requisites](#pre-requisites)
+  - [How to run the script](#how-to-run-the-script)
+  - [Scripts](#scripts)
+    - [single_colour.py](#single_colourpy)
+    - [gradient_by_row.py](#gradient_by_rowpy)
+    - [gradient_by_row_with_reverse.py](#gradient_by_row_with_reversepy)
+    - [random_sparkle.py](#random_sparklepy)
+    - [vertical_pattern.py](#vertical_patternpy)
+  - [How to keep your light sequence running indefinitely](#how-to-keep-your-light-sequence-running-indefinitely)
+    - [How to stop `long_run.sh`](#how-to-stop-long_runsh)
+
 # Raspberry Pi RGB Xmas Tree Additional Lighting Sequence 
 
 Additional lighting sequence for the Raspberry Pi RBG Xmas tree which can be purchased [here]. They also provide some code and instructions to [start you off]. It does provide a good starting point.
@@ -28,6 +40,13 @@ To stop the script just press `ctrl + c` i.e. `ctrl` and `c` together. (All you 
 
 ## Scripts
 
+### single_colour.py
+A simple script to test out colours. Some of the formats you can use to represent colours are:
+
+* Colour names `Color(('blue')`
+* Hexadecimal value `Color('#fec89a')`
+* RGB e.g. `Color((0,255,0))`
+
 ### gradient_by_row.py
 This lights up the xmas tree each pixel at a time moving up each row. The colour of each pixel forms a gradient between two colours. For example you could start with the first pixel blue and slowly transition each pixel to red at the top. The script contains a list of colour pairs that you can add to or modify. 
 
@@ -55,6 +74,8 @@ This script turns on the pixels in vertical columns along each blade of the tree
 ***Note***: On some of the script I've left off the top most pixel (pixel #3) in the script because of personal preference.
 
 ***Note 2***: A little mod that may make the tree a bit more visually pleasing is to put a paper code over the RGB xmas tree. You can use a coffee filter or just cut a circle out of a piece of paper and roll it into a cone. This will help diffuse the light and make it look less pixelated. If you do do this it would also be a good idea to use a brighter setting for LEDs.
+
+***Note 3***: The LEDs on the xmas tree can't represent all colours. (I don't know if it's becuase of the LEDs themselves, the chip that controls the LEDs or something else.) If the colour you enter isn't understood then it will show up white. If you choose a lighter shade of a colour it might also show up as white. I've found that vibrant colours work best. And don't even think about trying brown :) .
 
 ---
 
