@@ -73,7 +73,7 @@ This script turns on the pixels in vertical columns along each blade of the tree
 
 ***Note***: On some of the script I've left off the top most pixel (pixel #3) in the script because of personal preference.
 
-***Note 2***: A little mod that may make the tree a bit more visually pleasing is to put a paper code over the RGB xmas tree. You can use a coffee filter or just cut a circle out of a piece of paper and roll it into a cone. This will help diffuse the light and make it look less pixelated. If you do do this it would also be a good idea to use a brighter setting for LEDs.
+***Note 2***: A little mod that may make the tree a bit more visually pleasing is to put a paper cone over the RGB xmas tree. You can use a coffee filter or just cut a circle out of a piece of paper and roll it into a cone. This will help diffuse the light and make it look less pixelated. If you do do this it would also be a good idea to use a brighter setting for LEDs. My quick little hack ended up looking like [this]
 
 ***Note 3***: The LEDs on the xmas tree can't represent all colours. (I don't know if it's becuase of the LEDs themselves, the chip that controls the LEDs or something else.) If the colour you enter isn't understood then it will show up white. If you choose a lighter shade of a colour it might also show up as white. I've found that vibrant colours work best. And don't even think about trying brown :) .
 
@@ -121,3 +121,4 @@ kill 645044
 [start you off]: https://github.com/ThePiHut/rgbxmastree
 [long_run.sh]: long_run.sh
 [coolors]: https://coolors.co/gradients
+[this]: https://photos.app.goo.gl/ASrtkw665mumwcxS7
