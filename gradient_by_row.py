@@ -7,7 +7,7 @@ from decimal import *
 getcontext().prec = 1
 
 tree = RGBXmasTree()
-tree.brightness = 0.04 
+# tree.brightness = 0.04 
 
 def random_colour():
   r = Decimal(random.random())
@@ -44,7 +44,8 @@ def generate_random_gradient():
     ['red', 'blue'],
     ['blue', 'red'],
     ['red', 'green'],
-    ['green', 'red']
+    ['green', 'red'],
+    ['blue', 'magenta']
   ]
 
   # Workout the number of colour pairs available.
@@ -73,24 +74,24 @@ column8 = [22,23,24] #2
 theColumnTree = [column1, column2, column3, column4, column5, column6, column7, column8]
 
 # The sequence of pixels to light up so that they appear to go in rows
-rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
+rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9]
+# This order includes the pixel at the top of the tree.
+# rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
+
+numberOfPixels = len(rowOrder)
 
 try:
   while True:
     # Generate the colours for each pixel.
     randomColourGradient = generate_random_gradient()
     # Turn the pixels on pixel by pixel with each colour on the generate_random_gradient.
-    for x in range(25):
+    for x in range(24):
       tree[rowOrder[x]].color = randomColourGradient[x]
-      if x < 24:
-        # Turn each light on at 0.1 seconds intervals
-        sleep(0.1)
-      else:
-        # Pause for 1 second when all the pixels are lit up.
-        sleep(1)
+      if x == (numberOfPixels - 1):
+        sleep(0.5)       
     
     # After all pixels are lit up turn it all off and start again.
-    tree.off()
+    # tree.off()
     
 except KeyboardInterrupt:
   tree.off()

@@ -8,7 +8,7 @@ import numpy as np
 getcontext().prec = 1
 
 tree = RGBXmasTree()
-tree.brightness = 0.04
+# tree.brightness = 0.04
 
 def random_colour():
   return tuple(np.random.choice(range(256), size=3))
@@ -97,19 +97,23 @@ def generate_gradient(colourFrom, colourTo):
 
   return colourGradient
 
-rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
+# rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
+rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9]
+numberOfPixels = len(rowOrder)
 rowOrder += list(reversed(rowOrder))
 
 try:
+
   while True:
     colourPair = generate_random_gradient_from_list()
 
     # Uncomment the line below (remove the '#') to see what the colour are being used.
     # print(f'{colourPair[0]} -> {colourPair[1]}')
     randomColourGradient = generate_gradient(colourPair[0], colourPair[1])
-    for x in range(50):
-      tree[rowOrder[x]].color = randomColourGradient[x%25]
-      if x > 26:
+    for x in range(48):
+      tree[rowOrder[x]].color = randomColourGradient[x%24]
+
+      if x > (numberOfPixels - 1):
         tree[rowOrder[x]].off()        
     
     tree.off()
