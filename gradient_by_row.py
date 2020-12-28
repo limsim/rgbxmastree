@@ -18,16 +18,19 @@ def random_colour():
 def generate_random_gradient():
   colourGradient = []
 
-# Available colours
-# black
-# blue
-# green
-# yellow
-# cyan
-# white
-# magenta
-# red
+  # Available colours
+  # black
+  # blue
+  # green
+  # yellow
+  # cyan
+  # white
+  # magenta
+  # red
 
+  # This are all the colour pairs your tree can transition to and from
+  # You can modify this list to your liking. 
+  # The colours that you can use a listed above.
   colourPairs = [['red', 'blue'], 
     ['yellow', 'red'], 
     ['blue', 'green'], 
@@ -37,15 +40,22 @@ def generate_random_gradient():
     ['red', 'white'],
     ['cyan', 'white'],
     ['magenta', 'red'],
-    ['red', 'magenta']
+    ['red', 'magenta'],
+    ['red', 'blue'],
+    ['blue', 'red'],
+    ['red', 'green'],
+    ['green', 'red']
   ]
 
+  # Workout the number of colour pairs available.
   numberOfColourPairs = len(colourPairs)
-  int(random.random() * numberOfColourPairs)
+  # Choose a random colour pair.
   chosenColourPair = colourPairs[int(random.random() * numberOfColourPairs)]
   colourFrom = chosenColourPair[0]
   colourTo = chosenColourPair[1]
 
+  # Create a 25 step colour gradient (because there are 25 pixels on the tree) 
+  # that goes from the first colour in the colour pair to the second colour.
   for c in Color(colourFrom).gradient(Color(colourTo), 25):
     colourGradient.append(c)
 
@@ -62,18 +72,24 @@ column7 = [19,20,21] #3
 column8 = [22,23,24] #2
 theColumnTree = [column1, column2, column3, column4, column5, column6, column7, column8]
 
+# The sequence of pixels to light up so that they appear to go in rows
 rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
 
 try:
   while True:
+    # Generate the colours for each pixel.
     randomColourGradient = generate_random_gradient()
+    # Turn the pixels on pixel by pixel with each colour on the generate_random_gradient.
     for x in range(25):
       tree[rowOrder[x]].color = randomColourGradient[x]
       if x < 24:
+        # Turn each light on at 0.1 seconds intervals
         sleep(0.1)
       else:
+        # Pause for 1 second when all the pixels are lit up.
         sleep(1)
     
+    # After all pixels are lit up turn it all off and start again.
     tree.off()
     
 except KeyboardInterrupt:
