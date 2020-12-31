@@ -2,13 +2,13 @@
   - [Pre-requisites](#pre-requisites)
   - [How to run the script](#how-to-run-the-script)
   - [Scripts](#scripts)
-    - [[single_colour.py]](#single_colourpy)
-    - [[gradient_by_row.py]](#gradient_by_rowpy)
-    - [[gradient_by_row_with_reverse.py]](#gradient_by_row_with_reversepy)
-    - [[random_sparkle.py]](#random_sparklepy)
-    - [[vertical_pattern.py]](#vertical_patternpy)
-    - [[row_by_row.py]](#row_by_rowpy)
-    - [[snake.py]](#snakepy)
+    - [single_colour.py](#single_colourpy)
+    - [gradient_by_row.py](#gradient_by_rowpy)
+    - [gradient_by_row_with_reverse.py](#gradient_by_row_with_reversepy)
+    - [random_sparkle.py](#random_sparklepy)
+    - [vertical_pattern.py](#vertical_patternpy)
+    - [row_by_row.py](#row_by_rowpy)
+    - [snake.py](#snakepy)
   - [How to keep your light sequence running indefinitely](#how-to-keep-your-light-sequence-running-indefinitely)
     - [How to stop `long_run.sh`](#how-to-stop-long_runsh)
 
@@ -42,19 +42,19 @@ To stop the script just press `ctrl + c` i.e. `ctrl` and `c` together. (All you 
 
 ## Scripts
 
-### [single_colour.py]
+### single_colour.py
 A simple script to test out colours. Some of the formats you can use to represent colours are:
 
 * Colour names `Color(('blue')`
 * Hexadecimal value `Color('#fec89a')`
 * RGB e.g. `Color((0,255,0))`
 
-### [gradient_by_row.py]
+### gradient_by_row.py
 This lights up the xmas tree each pixel at a time moving up each row. The colour of each pixel forms a gradient between two colours. For example you could start with the first pixel blue and slowly transition each pixel to red at the top. The script contains a list of colour pairs that you can add to or modify. 
 
 After lighting up from bottom to top the lights will pause for one second before switching off and a second colour pair will be picked at random and the light sequence will start again. 
 
-### [gradient_by_row_with_reverse.py]
+### gradient_by_row_with_reverse.py
 This does the same thing as before but once the lights are all lit up it will start turning off the pixels one by one from the top down. When it reaches the bottom a new colour pair will be chosen and the tree will light up again.
 
 By default it picks a pair of colours from a fix list of colours. I've included a few functions that generate colours in different ways:
@@ -63,20 +63,20 @@ By default it picks a pair of colours from a fix list of colours. I've included 
 * generate_random_gradient_by_hex_pair - Same as before but the colours are not defined in hexadcimal. You can use sites look [coolors] to create gradients and get the hexadecimal values for them.
 * random_colour - This function generates a random colour in a RGB tuple format i.e. (255,0,0)
 
-### [random_sparkle.py]
+### random_sparkle.py
 This is a slight variaion on the `randomsparkles.py` found in the PiHut examples. It still lights up random pixels with random colours. But this script will also turn of pixels at random. So you should never end up with a fully lit tree. There should always be around half of the tree lit with one of them changing to a random colour ever 0.1 seconds. This give it a bit more of a sparkle look. 
 
 You can try modifying how quickly the pixel changes colour as well as how likely a pixel will be turned off.
 
-### [vertical_pattern.py]
+### vertical_pattern.py
 This script turns on the pixels in vertical columns along each blade of the tree. After turning all the pixels for one colour it will then pick another random colour and start change all the pixels vertically and so on so forth.
 
-### [row_by_row.py]
+### row_by_row.py
 This lights up the tree row by row. It does this by telling tree which pixel to turn on in a single array. At the moment it lights up in white but could easily be modified to light up in different colours. 
 
 The tree takes a list of 25 tuples which represents RGB. In this instance you can use hexadecimal values.
 
-### [snake.py]
+### snake.py
 This is variation on `gradient_by_row.py` that create a string of 4 pixels that travels up the tree. At the moment it only goes up the tree. See if you can make it come back down when it reaches the top.
 
 ----
