@@ -98,7 +98,7 @@ def generate_gradient(colourFrom, colourTo):
   return colourGradient
 
 # rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
-rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9]
+rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,4,10,18,13,9]
 numberOfPixels = len(rowOrder)
 rowOrder += list(reversed(rowOrder))
 
@@ -112,9 +112,11 @@ try:
     randomColourGradient = generate_gradient(colourPair[0], colourPair[1])
     for x in range(48):
       tree[rowOrder[x]].color = randomColourGradient[x%24]
+      sleep(0.05)
 
       if x > (numberOfPixels - 1):
-        tree[rowOrder[x]].off()        
+        tree[rowOrder[x]].off()  
+        sleep(0.05)      
     
     tree.off()
     

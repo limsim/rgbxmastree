@@ -58,7 +58,7 @@ def generate_random_gradient():
   return colourGradient
 
 # The sequence of pixels to light up so that they appear to go in rows
-rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9]
+rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,4,10,18,13,9]
 # This order includes the pixel at the top of the tree.
 # rowOrder = [0,24,19,6,12,16,15,7,1,23,20,5,11,17,14,8,2,22,21,8,10,18,13,9,3]
 
