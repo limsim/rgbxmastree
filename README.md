@@ -7,6 +7,7 @@
     - [gradient_by_row_with_reverse.py](#gradient_by_row_with_reversepy)
     - [random_sparkle.py](#random_sparklepy)
     - [vertical_pattern.py](#vertical_patternpy)
+    - [row_by_row.py](#row_by_rowpy)
   - [How to keep your light sequence running indefinitely](#how-to-keep-your-light-sequence-running-indefinitely)
     - [How to stop `long_run.sh`](#how-to-stop-long_runsh)
 
@@ -68,6 +69,11 @@ You can try modifying how quickly the pixel changes colour as well as how likely
 
 ### vertical_pattern.py
 This script turns on the pixels in vertical columns along each blade of the tree. After turning all the pixels for one colour it will then pick another random colour and start change all the pixels vertically and so on so forth.
+
+### row_by_row.py
+This lights up the tree row by row. It does this by telling tree which pixel to turn on in a single array. At the moment it lights up in white but could easily be modified to light up in different colours. 
+
+The tree takes a list of 25 tuples which represents RGB. In this instance you can use hexadecimal values.
 
 ----
 
